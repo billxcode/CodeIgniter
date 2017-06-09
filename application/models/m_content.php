@@ -37,6 +37,11 @@ class M_content extends CI_Model {
 		$this->db->delete($this->table);
 		return $this->db->affected_rows();
 	}
+
+	function getById($id)
+	{
+		return $this->db->query("SELECT * FROM article WHERE `id`=$id");
+	}
 	
 }
 

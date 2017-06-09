@@ -51,16 +51,22 @@ class Admin extends CI_Controller {
 		return redirect(base_url('index.php/admin/contentlist'));
 	}
 
-	public function contentedit()
+	public function editform($id)
 	{
-		$id = $this->uri->segment('2');
-		$this->m_content->delete($id);
+		$article = $this->m_content->getById($id);
+		return $this->load->view("admin/v_admin_content_edit", array('article'=>$article));
+	}
+
+	public function contentedit($id)
+	{
+		$data['id'] = $id;
+		$data['title'] = $
+		$this->m_content->update($id);
 		return redirect(base_url('index.php/admin/contentlist'));
 	}
 
 	public function contentdelete($id)
 	{
-		// $id = $this->uri->segment('2');
 		$this->m_content->delete($id);
 		return redirect(base_url('index.php/admin/contentlist'));
 	}

@@ -19,7 +19,7 @@
 									<td><?php echo $value->content ?></td>
 									<td><?php echo $value->author ?></td>
 									<td><a href="<?php echo base_url('index.php/admin/contentdelete/'.$value->id) ?>" class="btn btn-danger">Delete</a></td>
-									<td><a href="<?php echo base_url('index.php/admin/contentedit'.$value->id) ?>" class="btn btn-danger">Edit</a></td>
+									<td><a href="<?php echo base_url('index.php/admin/editform/'.$value->id) ?>" class="btn btn-warning">Edit</a></td>
 								</tr>
 								<?php	
 							} ?>
