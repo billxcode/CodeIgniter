@@ -15,6 +15,7 @@ class Admin extends CI_Controller {
 		header("Pragma: no-cache");		
 		
 		$this->load->model('m_user');
+		$this->load->model('m_content');
 		
 		if ($this->m_user->is_logged_in() === FALSE) { 
 			$this->m_user->remove_pass();
@@ -23,12 +24,31 @@ class Admin extends CI_Controller {
 			// is_logged_in also put user data in session
 			$this->data['user'] = $this->session->userdata('user');
 		}
-
     }
 
 	public function index()
 	{
 		$this->load->view('admin/v_admin_home', $this->data);
+	}
+
+	public function contentcreate()
+	{
+		return $this->load->view("admin/v_admin_content");
+	}
+
+	public function contentlist()
+	{
+		$articles = $this->m_content->getAll();
+		return $this->load->view("admin/v_admin_content_list", array('articles' => $articles));
+	}
+
+	public function postcontent()
+	{
+		$data['title'] = $this->input->post('title');
+		$data['content'] = $this->input->post('content');
+		$data['author'] = 'admin';
+		$this->m_content->save($data);
+		return redirect(base_url('index.php/admin/contentlist'));
 	}
 	
 
