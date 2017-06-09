@@ -35,6 +35,7 @@ class M_content extends CI_Model {
 	{
 		$this->db->where('id', $id);
 		$this->db->delete($this->table);
+		return $this->db->affected_rows();
 	}
 	
 }

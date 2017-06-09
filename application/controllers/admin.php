@@ -58,9 +58,9 @@ class Admin extends CI_Controller {
 		return redirect(base_url('index.php/admin/contentlist'));
 	}
 
-	public function contentdelete()
+	public function contentdelete($id)
 	{
-		$id = $this->uri->segment('2');
+		// $id = $this->uri->segment('2');
 		$this->m_content->delete($id);
 		return redirect(base_url('index.php/admin/contentlist'));
 	}
