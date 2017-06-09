@@ -7,12 +7,13 @@ class Blog extends CI_Controller {
     {
         // Call the Controller constructor
         parent::__construct();	
-
+        $this->load->model('m_content');
     }
 
 	public function index()
 	{
-		$this->load->view('blog/v_blog_home');
+		$data = $this->m_content->getAll();
+		$this->load->view('blog/v_blog_home', array('articles'=>$data));
 	}
 	
 
