@@ -6,7 +6,7 @@
 			        </div><!--/span-->
 				<div class="span8">
 				<?php $data = $article->row(); ?>
-						<form class="form" method="POST" action="<?php echo base_url('index.php/admin/postcontent') ?>" >
+						<form class="form" method="POST" action="<?php echo base_url('index.php/admin/contentedit/'.$data->id) ?>" >
 							<div class="form-group">
 								<input type="text" class="form-control span5" name="title" placeholder="title" value="<?php echo $data->title; ?>">
 							</div>

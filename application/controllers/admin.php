@@ -60,8 +60,9 @@ class Admin extends CI_Controller {
 	public function contentedit($id)
 	{
 		$data['id'] = $id;
-		$data['title'] = $
-		$this->m_content->update($id);
+		$data['title'] = $this->input->post('title');
+		$data['content'] = $this->input->post('content');
+		$this->m_content->update($data);
 		return redirect(base_url('index.php/admin/contentlist'));
 	}
 
