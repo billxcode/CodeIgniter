@@ -28,9 +28,9 @@
 					</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about</li>
-							<li><a href="#contact">Contact</a></li>
+							<li class="active"><a href="/">Home</a></li>
+							<!-- <li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li> -->
 						</ul>
 					</div><!--/.nav-collapse -->
 					
@@ -82,18 +82,18 @@
 
 						</ul>
 					</div>
-					<div id="sidebar" class="span4">
+					<!-- <div id="sidebar" class="span4">
 						<div class="widget">
 							Praesent laoreet elit vel augue porttitor eu adipiscing risus egestas. Donec luctus ligula nec tortor porta ut sodales neque ultrices. Sed rhoncus metus non est ullamcorper aliquet. Morbi eu blandit nibh. Donec dictum iaculis diam nec pulvinar. Morbi auctor hendrerit aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="span6">&copy; Copyright 2012</div>
+					<div class="span6">&copy; Copyright <?php echo Date('Y') ?></div>
 					<div class="span6"></div>
 				</div>
 			</div>
