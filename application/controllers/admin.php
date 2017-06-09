@@ -50,6 +50,21 @@ class Admin extends CI_Controller {
 		$this->m_content->save($data);
 		return redirect(base_url('index.php/admin/contentlist'));
 	}
+
+	public function contentedit()
+	{
+		$id = $this->uri->segment(3);
+		$this->m_content->delete($id);
+		return redirect(base_url('index.php/admin/contentlist'));
+	}
+
+	public function contentdelete()
+	{
+		$id = $this->uri->segment(3);
+		$this->m_content->delete($id);
+		return redirect(base_url('index.php/admin/contentlist'));
+	}
+
 	
 
 }
